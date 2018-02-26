@@ -146,6 +146,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+]
+
+if os.environ.get('HOST_IP', None):
+    ALLOWED_HOSTS.append(os.environ.get('HOST_IP'))
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
