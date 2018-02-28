@@ -52,7 +52,7 @@
       <div class="row">
         <div class="col">
           <chart-card
-            :chart-data="pieChart.data"
+            :chart-data="{}"
             chart-type="Pie">
             <template slot="header">
               <h4 class="card-title">Enrollments</h4>
@@ -82,7 +82,6 @@ import Checkbox from "../../UIComponents/Inputs/Checkbox.vue";
 export default {
   mounted() {
     timeago().render(document.querySelectorAll(".timeago"));
-    console.log("context: ", this.context);
   },
   components: {
     Checkbox,
