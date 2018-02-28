@@ -24,4 +24,4 @@ exec ../bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
     --group=$GROUP \
     --bind=$BIND \
     --log-level=$LOG_LEVEL \
-    --log-file=../logs/gunicorn-error.log
+    --log-file=-
