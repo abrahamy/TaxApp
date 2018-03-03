@@ -10,6 +10,11 @@ mix.webpackConfig({
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`
+    }),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
     })
   ]
 })
@@ -20,9 +25,10 @@ mix
   .copyDirectory('Assets/images', assetPublishPath + '/images')
   .autoload({
     jquery: ['$', 'window.jQuery', 'window.jquery'],
+    raphael: ['Raphael'],
     'popper.js': ['Popper']
   })
   .extract([
     'vue', 'axios', 'jquery', 'bootstrap', 'es6-promise', 'popper.js',
-    'chartist', 'vue-clickaway', 'vue-notifyjs', 'timeago.js'
+    'vue-clickaway', 'vue-notifyjs', 'timeago.js', 'raphael'
   ])
